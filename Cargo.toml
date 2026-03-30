@@ -1,0 +1,27 @@
+[package]
+name = "ifc-lite-geometry-cat"
+version = "0.1.0"
+edition = "2024"
+description = "Geometry processing and mesh generation for IFC models, built on comp-cat-rs"
+license = "MIT OR Apache-2.0"
+keywords = ["ifc", "bim", "geometry", "mesh", "aec"]
+categories = ["graphics", "parsing"]
+
+[dependencies]
+comp-cat-rs = "0.5.0"
+ifc-lite-core-cat = { path = "../ifc-lite-core" }
+nalgebra = { version = "0.33", default-features = false, features = ["std"] }
+earcutr = "0.4"
+
+[dev-dependencies]
+proptest = "1"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+needless_pass_by_value = "warn"
+manual_map = "warn"
+cast_possible_truncation = "allow"
+cast_sign_loss = "allow"
+cast_precision_loss = "allow"
+module_name_repetitions = "allow"
