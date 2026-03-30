@@ -9,7 +9,7 @@ categories = ["graphics", "parsing"]
 
 [dependencies]
 comp-cat-rs = "0.5.0"
-ifc-lite-core-cat = { path = "../ifc-lite-core" }
+ifc-lite-core-cat = "0.1.1"
 nalgebra = { version = "0.33", default-features = false, features = ["std"] }
 earcutr = "0.4"
 
