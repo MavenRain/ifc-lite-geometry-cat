@@ -24,8 +24,10 @@ composable.
 use ifc_lite_geometry_cat::{Profile2D, extrude_profile};
 
 let profile = Profile2D::rectangle(2.0, 1.0);
-let mesh = extrude_profile(&profile, 3.0, None).run().unwrap();
-println!("{} vertices, {} triangles", mesh.vertex_count(), mesh.triangle_count());
+match extrude_profile(&profile, 3.0, None).run() {
+    Ok(mesh) => println!("{} vertices, {} triangles", mesh.vertex_count(), mesh.triangle_count()),
+    Err(e) => eprintln!("extrusion failed: {e}"),
+}
 ```
 
 ## Functional Design
